@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>CollectionsDemo_Nov</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="GenericsDemoLibrary">
+      <HintPath>..\GenericsDemoLibrary\bin\Debug\net8.0\GenericsDemoLibrary.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
