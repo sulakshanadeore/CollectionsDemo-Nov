@@ -13,31 +13,80 @@ internal class Program
         //strs.Add("Hello");
         //strs.Add("Good Morning");
 
-        List<Employee> emplist=new List<Employee>();//generic collections--collection type---->employee and collection name=emplist
+        //     List<Employee> emplist=new List<Employee>();//generic collections--collection type---->employee and collection name=emplist
 
-        Employee e1=new Employee();
-        e1.Empid = 100;
-        e1.Ename = "Anuj";
-        e1.Deptno = 10;
-       emplist.Add(e1);
-       emplist.Add(new Employee {Empid=102,Ename="Sakshi",Deptno=10 });
-        emplist.Add(new Employee { Empid = 103, Ename = "Simran", Deptno = 10 });
-        emplist.Add(new Employee { Empid = 105, Ename = "Jack", Deptno = 10 });
-        emplist.Add(new Employee { Empid = 104, Ename = "Jim", Deptno = 30 });
-        emplist.Add(new Employee { Empid = 106, Ename = "Tim", Deptno = 20 });
-        emplist.Add(new Employee { Empid = 101, Ename = "Shashi", Deptno = 20 });
+        //   Employee e1=new Employee();
+        // e1.Empid = 100;
+        //e1.Ename = "Anuj";
+        //e1.Deptno = 10;
+        //emplist.Add(e1);
+        //emplist.Add(new Employee {Empid=102,Ename="Sakshi",Deptno=10 });
+        // emplist.Add(new Employee { Empid = 103, Ename = "Simran", Deptno = 10 });
+        // emplist.Add(new Employee { Empid = 105, Ename = "Jack", Deptno = 10 });
+        // emplist.Add(new Employee { Empid = 104, Ename = "Jim", Deptno = 30 });
+        // emplist.Add(new Employee { Empid = 106, Ename = "Tim", Deptno = 20 });
+        // emplist.Add(new Employee { Empid = 101, Ename = "Shashi", Deptno = 20 });
 
 
-        emplist.Sort();
+        // emplist.Sort();
+        // emplist.Reverse();
 
-        foreach (var item in emplist)
+        // foreach (var item in emplist)
+        // {
+        //     Console.WriteLine(item.Empid);
+        //     Console.WriteLine(item.Ename);
+        //     Console.WriteLine(item.Deptno);
+        //     Console.WriteLine();
+        // }
+
+        char answer = 'N';
+        do
         {
-            Console.WriteLine(item.Empid);
-            Console.WriteLine(item.Ename);
-            Console.WriteLine(item.Deptno);
-            Console.WriteLine();
-        }
+            Console.WriteLine("Menu \n1.Add \n2.Edit \n3.ShowList  \n4.Delete \n5.Exit");
+            Console.WriteLine("Enter your choice");
+            int ch=Convert.ToInt32(Console.ReadLine());
 
+            EmployeeOperations operations = new EmployeeOperations();
+            switch (ch)
+            {
+                case 1:
+                    Employee emp = new Employee();
+                    Console.WriteLine("Enter Employee ID");
+                    emp.Empid = Convert.ToInt32(Console.ReadLine());
+
+
+                    Console.WriteLine("Enter name");
+                    emp.Ename = Console.ReadLine();
+
+                    Console.WriteLine("Enter Deptno");
+                    emp.Deptno = Convert.ToInt32(Console.ReadLine());
+
+
+                    
+                    operations.AddEmployee(emp);
+
+                    break;
+                case 3:
+                    
+                   List<Employee> emplisttoShow= operations.ShowEmpList();
+                    foreach (var item in emplisttoShow)
+                    {
+                        Console.WriteLine(item.Empid);
+                        Console.WriteLine(item.Ename);
+                        Console.WriteLine(item.Deptno);
+                        Console.WriteLine();
+                    }
+                    break;
+                case 5:
+                    Environment.Exit(0);
+                    break;
+            }
+
+            
+            Console.WriteLine("Do u wnat menu again?");
+            answer = Convert.ToChar(Console.ReadLine());
+        }
+        while (answer == 'Y');
 
 
 
