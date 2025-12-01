@@ -28,6 +28,8 @@ internal class Program
         emplist.Add(new Employee { Empid = 101, Ename = "Shashi", Deptno = 20 });
 
 
+        emplist.Sort();
+
         foreach (var item in emplist)
         {
             Console.WriteLine(item.Empid);
