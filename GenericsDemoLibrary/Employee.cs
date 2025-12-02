@@ -31,16 +31,18 @@
         {
             get { return _empid; }
             set {
-                
+
                 if (value <= 0)
                 {
                     throw new InvalidDataException("Invalid Employee ID");
-                
+
                 }
+               
                 else
                     _empid = value; 
             }
         }
+        //should not be null,empty and min length 5 chars
 
         public string Ename { get; set; }
         public int Deptno { get; set; }

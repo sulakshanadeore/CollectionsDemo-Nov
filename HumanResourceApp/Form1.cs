@@ -30,17 +30,33 @@ namespace HumanResourceApp
                 txtName.Clear();
                 txtDeptno.Clear();
             }
-            catch (Exception ex)
+            catch (InvalidDataException ex)
             {
 
                 MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.GetType().Name);
             }
-            
+            catch (FormatException ex)
+            {
+                MessageBox.Show(ex.GetType().Name);
+                //                MessageBox.Show(ex.Message); ;
+                MessageBox.Show("I am in format exception");
+
+
+            }
+            catch (Exception ex)//Format & Overflow
+            {
+                MessageBox.Show(ex.GetType().Name);
+                MessageBox.Show(ex.Message);
+                MessageBox.Show("I am in General Exception");
+
+            }
+
         }
 
         private void btnshow_Click(object sender, EventArgs e)
         {
-           EmployeeOperations operations = new EmployeeOperations();        
+            EmployeeOperations operations = new EmployeeOperations();
 
             List<Employee> emplist = operations.ShowEmpList();
             listBox1.Items.Clear();
@@ -49,5 +65,7 @@ namespace HumanResourceApp
                 listBox1.Items.Add(item.Empid + " " + item.Ename + " " + item.Deptno);
             }
         }
+
+        
     }
 }
