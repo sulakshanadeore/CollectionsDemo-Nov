@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36623.8 d17.14
+VisualStudioVersion = 17.14.36623.8
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollectionsDemo-Nov", "CollectionsDemo-Nov\CollectionsDemo-Nov.csproj", "{51D1486C-9CDD-4669-8D9A-C54EFF527143}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -9,6 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollectionsDemo-Nov", "Coll
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericsDemoLibrary", "GenericsDemoLibrary\GenericsDemoLibrary.csproj", "{E9472AF8-D97E-4342-A6C3-DE1CBDDEEE31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HumanResourceApp", "HumanResourceApp\HumanResourceApp.csproj", "{550BDB17-B3CB-4AF7-AB74-2D14FACF2CFA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E9472AF8-D97E-4342-A6C3-DE1CBDDEEE31} = {E9472AF8-D97E-4342-A6C3-DE1CBDDEEE31}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,6 +29,10 @@ Global
 		{E9472AF8-D97E-4342-A6C3-DE1CBDDEEE31}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9472AF8-D97E-4342-A6C3-DE1CBDDEEE31}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E9472AF8-D97E-4342-A6C3-DE1CBDDEEE31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{550BDB17-B3CB-4AF7-AB74-2D14FACF2CFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{550BDB17-B3CB-4AF7-AB74-2D14FACF2CFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{550BDB17-B3CB-4AF7-AB74-2D14FACF2CFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{550BDB17-B3CB-4AF7-AB74-2D14FACF2CFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
