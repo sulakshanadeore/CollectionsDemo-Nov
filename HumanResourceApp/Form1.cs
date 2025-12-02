@@ -16,17 +16,26 @@ namespace HumanResourceApp
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Employee emp = new Employee();
-            emp.Empid = Convert.ToInt32(txtEmpid.Text);
-            emp.Ename = txtName.Text;
-            emp.Deptno = Convert.ToInt32(txtDeptno.Text);
+            try
+            {
+                Employee emp = new Employee();
+                emp.Empid = Convert.ToInt32(txtEmpid.Text);
+                emp.Ename = txtName.Text;
+                emp.Deptno = Convert.ToInt32(txtDeptno.Text);
 
-            EmployeeOperations operations = new EmployeeOperations();
-            operations.AddEmployee(emp);
-            MessageBox.Show("Record Added successfully....");
-            txtEmpid.Text = "";
-            txtName.Clear();
-            txtDeptno.Clear();
+                EmployeeOperations operations = new EmployeeOperations();
+                operations.AddEmployee(emp);
+                MessageBox.Show("Record Added successfully....");
+                txtEmpid.Text = "";
+                txtName.Clear();
+                txtDeptno.Clear();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         private void btnshow_Click(object sender, EventArgs e)

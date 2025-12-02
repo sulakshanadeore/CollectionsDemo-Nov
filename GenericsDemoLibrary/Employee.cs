@@ -22,8 +22,26 @@
     }
     public class Employee:IComparable<Employee>
     {
-      
-        public int Empid { get; set; }
+
+        // public int Empid { get; set; }
+
+        private int _empid;
+
+        public int Empid
+        {
+            get { return _empid; }
+            set {
+                
+                if (value <= 0)
+                {
+                    throw new InvalidDataException("Invalid Employee ID");
+                
+                }
+                else
+                    _empid = value; 
+            }
+        }
+
         public string Ename { get; set; }
         public int Deptno { get; set; }
 
